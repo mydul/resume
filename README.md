@@ -1,12 +1,12 @@
 
-# [mydul.github.io](https://mydul.github.io/)
+# [mydul.github.io/resume](https://mydul.github.io/resume/)
 
 A brief description of this repository containing all test project files for a static personal resume website.
 
 
 ## Project Goals
 
-Mainly, build a personal static page **"mydul.github.io"**.
+Mainly, build a personal static page **"mydul.github.io/resume"**.
 
 
 ## Demo
@@ -33,12 +33,12 @@ My first paragraph.
 
 ## License
 
-Under the [personal](https://github.com/mydul) licence and the [source code](https://bootstrapmade.com/license/) licence.
+Under the [personal](https://github.com/mydul) licence.
 
 
 ## Acknowledgements
 
-- [x]  [BootstrapMade](https://bootstrapmade.com/)
+- [x]  [Meher Ullah Khan Raj](https://github.com/raj-khan)
 
 
 ## Authors
