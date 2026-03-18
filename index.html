@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Mydul Islam — Project Manager & Nanotech Engineer</title>
+  <meta name="description" content="Project Manager & Micro and Nanotech Engineer" />
+  <meta name="author" content="Md Mydul Islam" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <style>
+    /* ─── CSS Variables ─── */
+    :root {
+      --navy:        #0d1b2e;
+      --navy-mid:    #162035;
+      --navy-light:  #1e2d47;
+      --gold:        #c9a96e;
+      --gold-light:  #e2c99a;
+      --gold-pale:   #f5eddc;
+      --slate:       #4a5568;
+      --slate-light: #718096;
+      --silver:      #e8edf3;
+      --white:       #ffffff;
+      --text-body:   #2d3748;
+      --text-muted:  #718096;
+      --border:      #dde3ea;
+      --shadow-sm:   0 2px 8px rgba(13,27,46,0.08);
+      --shadow-md:   0 8px 32px rgba(13,27,46,0.12);
+      --shadow-lg:   0 20px 60px rgba(13,27,46,0.18);
+      --radius:      12px;
+      --radius-sm:   6px;
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-body);
+      background: #f0f3f7;
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(201,169,110,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(13,27,46,0.06) 0%, transparent 60%);
+      min-height: 100vh;
+      padding: 40px 20px 60px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold); transition: color 0.2s; }
+
+    /* ─── Page Wrapper ─── */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Header ─── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 52px 60px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 40%;
+      width: 200px; height: 200px;
+      border: 1px solid rgba(201,169,110,0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      z-index: 0;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+      display: block;
+      border: 3px solid var(--navy);
+    }
+
+    /* fallback if image missing */
+    .avatar-fallback {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: var(--gold);
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-text { flex: 1; }
+
+    .header-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .header-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      list-style: none;
+    }
+
+    .header-contacts li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.78);
+      transition: color 0.2s;
+    }
+
+    .header-contacts li:hover { color: var(--gold-light); }
+
+    .header-contacts i {
+      color: var(--gold);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .header-contacts a { color: inherit; }
+
+    /* ─── Body Layout ─── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 600px;
+    }
+
+    /* ─── Sidebar ─── */
+    .sidebar {
+      background: #f7f9fb;
+      border-right: 1px solid var(--border);
+      padding: 44px 28px;
+    }
+
+    /* ─── Main ─── */
+    .main {
+      padding: 44px 48px;
+    }
+
+    /* ─── Section ─── */
+    .section { margin-bottom: 38px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title i {
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    /* ─── Sidebar: Skill Groups ─── */
+    .skill-group { margin-bottom: 20px; }
+
+    .skill-group-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      font-size: 11.5px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--slate);
+      padding: 3px 9px;
+      border-radius: 100px;
+      line-height: 1.6;
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: var(--navy);
+      color: var(--gold-light);
+      border-color: var(--navy);
+    }
+
+    /* ─── Language Bars ─── */
+    .lang-item { margin-bottom: 14px; }
+
+    .lang-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .lang-name { font-size: 13px; font-weight: 500; color: var(--navy); }
+    .lang-level { font-size: 11px; color: var(--text-muted); }
+
+    .lang-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .lang-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      border-radius: 100px;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ─── Cert List ─── */
+    .cert-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .cert-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .cert-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 2px;
+    }
+
+    .cert-name a { color: var(--navy); }
+    .cert-name a:hover { color: var(--gold); }
+
+    .cert-meta {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .cert-meta i { font-size: 11px; color: var(--gold); }
+
+    /* ─── Profile Summary ─── */
+    .profile-text {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--slate);
+      background: linear-gradient(135deg, #f7f9fb 0%, #eef2f7 100%);
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 0;
+    }
+
+    /* ─── Timeline ─── */
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-item {
+      padding-left: 24px;
+      padding-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .timeline-header { margin-bottom: 8px; }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .timeline-badge {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--gold);
+      background: var(--gold-pale);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,169,110,0.3);
+    }
+
+    .timeline-org {
+      font-size: 13px;
+      color: var(--slate);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .timeline-org a { color: var(--slate); }
+    .timeline-org a:hover { color: var(--gold); }
+
+    .timeline-body {
+      margin-top: 10px;
+    }
+
+    .timeline-body ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .timeline-body ul li {
+      font-size: 13.5px;
+      color: var(--slate);
+      line-height: 1.65;
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+
+    .timeline-body ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* ─── Projects ─── */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(201,169,110,0.4);
+    }
+
+    .project-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 11px 16px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--navy);
+      transition: background 0.2s;
+    }
+
+    .project-toggle:hover { background: #f7f9fb; }
+    .project-toggle.active { background: var(--gold-pale); }
+
+    .project-toggle i {
+      font-size: 12px;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .project-toggle.active i { transform: rotate(90deg); }
+
+    .project-details {
+      display: none;
+      padding: 2px 16px 12px 28px;
+      background: #fafbfc;
+    }
+
+    .project-details.open { display: block; animation: slideDown 0.2s ease; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .project-details ul li {
+      font-size: 13px;
+      color: var(--slate);
+      line-height: 1.6;
+      padding: 2px 0 2px 14px;
+      position: relative;
+    }
+
+    .project-details ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    /* ─── Volunteering ─── */
+    .vol-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .vol-item:first-child { padding-top: 0; }
+    .vol-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .vol-role {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .vol-org {
+      font-size: 12.5px;
+      color: var(--slate);
+    }
+
+    .vol-org a { color: var(--slate); }
+    .vol-org a:hover { color: var(--gold); }
+
+    .vol-date {
+      font-size: 11.5px;
+      color: var(--gold);
+      background: var(--gold-pale);
+      padding: 2px 8px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-weight: 500;
+      border: 1px solid rgba(201,169,110,0.25);
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      background: var(--navy);
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 4px;
+    }
+
+    .footer-socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .footer-socials a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .footer-copy {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.4);
+      text-align: right;
+    }
+
+    .footer-copy strong { color: var(--gold-light); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      body { padding: 0; }
+
+      .page { border-radius: 0; }
+
+      .header { padding: 36px 28px 32px; }
+      .header-inner { gap: 24px; }
+      .header-name { font-size: 2rem; }
+      .avatar, .avatar-fallback { width: 90px; height: 90px; }
+
+      .body-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 32px 28px;
+      }
+
+      .main { padding: 32px 28px; }
+
+      .footer { padding: 24px 28px; }
+      .footer-copy { text-align: left; }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner { flex-direction: column; text-align: center; }
+      .header-contacts { justify-content: center; }
+    }
+
+    /* ─── Print ─── */
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; }
+      .project-details { display: block !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="avatar-wrap">
+          <img class="avatar" src="assets/images/Mydul_Pro_Pic.png" alt="Md Mydul Islam"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-fallback" style="display:none;">MI</div>
+        </div>
+        <div class="header-text">
+          <h1 class="header-name">Md Mydul Islam</h1>
+          <p class="header-title">Project Manager &nbsp;·&nbsp; Nanotech Engineer</p>
+          <ul class="header-contacts">
+            <li><i class="bi bi-geo-alt-fill"></i> Stuttgart, Germany</li>
+            <li><i class="bi bi-telephone-fill"></i><a href="tel:+4915901390177">+49 (0)159 0139 0177</a></li>
+            <li><i class="bi bi-envelope-fill"></i><a href="mailto:islam@mydul.me">islam@mydul.me</a></li>
+            <li><i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/in/mydul/" target="_blank">linkedin.com/in/mydul</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── BODY ── -->
+    <div class="body-grid">
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="sidebar">
+
+        <!-- Skills -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-cpu-fill"></i> Skills</h2>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Project Management</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Agile / Scrum</span>
+              <span class="skill-tag">Waterfall</span>
+              <span class="skill-tag">Kanban</span>
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">Confluence</span>
+              <span class="skill-tag">Asana</span>
+              <span class="skill-tag">Smartsheet</span>
+              <span class="skill-tag">Signavio</span>
+              <span class="skill-tag">Polarion</span>
+              <span class="skill-tag">MS Project</span>
+              <span class="skill-tag">SharePoint</span>
+              <span class="skill-tag">Gantt Chart</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Nanofabrication & Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Photolithography</span>
+              <span class="skill-tag">EBL</span>
+              <span class="skill-tag">RIE</span>
+              <span class="skill-tag">Epitaxy</span>
+              <span class="skill-tag">CVD / PVD</span>
+              <span class="skill-tag">Sputtering</span>
+              <span class="skill-tag">SEM / TEM</span>
+              <span class="skill-tag">AFM</span>
+              <span class="skill-tag">XRF / XRD / XPS</span>
+              <span class="skill-tag">THz Spectroscopy</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Programming</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">NumPy / Pandas</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">Linux Shell</span>
+              <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Simulation & Software</div>
+            <div class="skill-tags">
+              <span class="skill-tag">MATLAB / Simulink</span>
+              <span class="skill-tag">COMSOL</span>
+              <span class="skill-tag">ANSYS HFSS</span>
+              <span class="skill-tag">Cadence</span>
+              <span class="skill-tag">Altium</span>
+              <span class="skill-tag">AutoCAD</span>
+              <span class="skill-tag">OriginPro</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-translate"></i> Languages</h2>
+
+          <div class="lang-item">
+            <div class="lang-header">
+              <span class="lang-name">Bengali</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-header">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Proficient (C1)</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-header">
+              <span class="lang-name">German</span>
+              <span class="lang-level">Intermediate (B1)</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
+          </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-patch-check-fill"></i> Certifications</h2>
+
+          <div class="cert-item">
+            <div class="cert-name">
+              <a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank">
+                Project Management Professional (PMP)
+              </a>
+            </div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Oct 2024 &nbsp;·&nbsp; PMI</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">
+              <a href="https://www.coursera.org/account/accomplishments/specialization/EY3D5XTTAH3D" target="_blank">
+                Google Project Management Certificate
+              </a>
+            </div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Mar 2024 &nbsp;·&nbsp; Google</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Zertifikat Deutsch (B1)</div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Feb 2024 &nbsp;·&nbsp; telc</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Python Bootcamp</div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2021 &nbsp;·&nbsp; Coursera</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">MATLAB / Simulink</div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Apr 2019 &nbsp;·&nbsp; Udemy</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">
+              <a href="https://drive.google.com/file/d/1xEc55CRQgI4JGHgirDSIIVabQFZyui8H/view?usp=sharing" target="_blank">
+                Extra-Curricular Activities
+              </a>
+            </div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Mar 2018 &nbsp;·&nbsp; EEE Club | GUB</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">
+              <a href="https://drive.google.com/file/d/1boJNrMjg1emf_Z0ZOUjUIIhKWdw0q0uM/view?usp=sharing" target="_blank">
+                Certification of Leadership
+              </a>
+            </div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2017 &nbsp;·&nbsp; British Council CETL</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Project Showcasing</div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2016 &nbsp;·&nbsp; IEEE</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">
+              <a href="https://drive.google.com/file/d/1xAFW8fNnTJtslRx_o5OQAKoEW4S9KlUc/view?usp=sharing" target="_blank">
+                National Book Reading Competition
+              </a>
+            </div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Oct 2015 &nbsp;·&nbsp; British Council</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">COMSOL Multiphysics</div>
+            <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2014 &nbsp;·&nbsp; Daffodil Int'l Univ.</div>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- ── MAIN ── -->
+      <main class="main">
+
+        <!-- Profile -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-person-lines-fill"></i> Profile</h2>
+          <p class="profile-text">
+            Project Manager with 5+ years of experience in R&D and engineering. Proven expertise in leading teams,
+            managing projects, implementing agile methodologies, and delivering innovative solutions in the semiconductor
+            industry. Leverages nanofabrication, materials science, and electrical engineering expertise with strong
+            communication and problem-solving abilities to manage complex processes and drive successful outcomes.
+          </p>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-briefcase-fill"></i> Professional Experience</h2>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">Project Manager</div>
+                  <span class="timeline-badge">Sep 2023 – Present</span>
+                </div>
+                <div class="timeline-org">
+                  <a href="https://magnetic-sense.com/" target="_blank">Magnetic Sense GmbH</a>
+                  &nbsp;·&nbsp; Stuttgart, Germany
+                </div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Lead multiple R&D projects ensuring success through risk management and change management; implement agile methodologies as Scrum Master, overseeing systems engineering, prototyping, and testing.</li>
+                  <li>Increased project efficiency by 10% through improved planning, resource management, and cost control.</li>
+                  <li>Defined and leveraged processes and teams to achieve project milestones; fostered strategic thinking and effective stakeholder communication.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">Shift Manager</div>
+                  <span class="timeline-badge">Nov 2021 – Feb 2023</span>
+                </div>
+                <div class="timeline-org">ITS Industriebedarf GmbH &nbsp;·&nbsp; Siegen, NRW, Germany</div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Spearheaded a 25–30 member team, leveraging expertise in team management, quality control, and problem-solving to drive development and enhance quality.</li>
+                  <li>Achieved 30% reduction in defects and 25% improvement in overall project efficiency.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">Manufacturing Process Engineer</div>
+                  <span class="timeline-badge">Jul 2020 – Nov 2021</span>
+                </div>
+                <div class="timeline-org">ITS Industriebedarf GmbH &nbsp;·&nbsp; Netphen, NRW, Germany</div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Led cross-functional teams developing and optimizing manufacturing processes, resulting in reduced production time and a 15% increase in overall output.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">Research Assistant</div>
+                  <span class="timeline-badge">May 2017 – May 2019</span>
+                </div>
+                <div class="timeline-org">Green University of Bangladesh &nbsp;·&nbsp; Dhaka, Bangladesh</div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Assisted in 4 project groups spanning semiconductor devices, power electronics, MEMS, and materials research, contributing to 3 national and international research publications.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-mortarboard-fill"></i> Education</h2>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">M.Sc. in Nanosciences and Nanotechnology</div>
+                  <span class="timeline-badge">May 2023</span>
+                </div>
+                <div class="timeline-org">
+                  <a href="https://www.uni-siegen.de/start/" target="_blank">University of Siegen</a>
+                  &nbsp;·&nbsp; Siegen, Germany
+                </div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Collaborated with interdisciplinary research teams in clean room environments on nanofabrication, nanoanalysis, and material characterization.</li>
+                  <li>Proficiency in quantum physics, materials science, thin film deposition, microwave, THz wave, and photonics devices.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <div class="timeline-top">
+                  <div class="timeline-title">B.Sc. in Electrical and Electronic Engineering</div>
+                  <span class="timeline-badge">May 2016</span>
+                </div>
+                <div class="timeline-org">
+                  <a href="https://www.green.edu.bd/" target="_blank">Green University of Bangladesh</a>
+                  &nbsp;·&nbsp; Dhaka, Bangladesh
+                </div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Expertise in digital signal processing, solid-state physics, analog and digital circuits, control systems, optoelectronics, and electrical measurements.</li>
+                  <li>Projects in microcontrollers, PCB layout design, power electronics, MEMS, EDA design, and CMOS technologies.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Research Projects -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-flask-fill"></i> Research Projects</h2>
+          <div class="projects-grid">
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                THz Metamaterial-based Microfluidic Sensor Fabrication and Measurement
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>THz frequency domain spectroscopy for precise material characterization.</li>
+                  <li>Designed novel microfluidic devices integrated with metamaterial-based sensors.</li>
+                  <li>Employed Photolithography, RIE, Plasma etching, and Lift-Off for precise sensor fabrication.</li>
+                  <li>Polymer casting via TMCS surface modification and PDMS utilization.</li>
+                  <li>CVD and PVD methods for advanced material deposition; optical profilometry QC.</li>
+                  <li>HQ+ 2D graphene transfer system for high-performance applications.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Cross-sectional Preparation of Fuel Cells using Ultramicrotome Method
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Cross-sectioning PEM fuel cells for TEM analysis.</li>
+                  <li>Researched Diamond and Glass knife angles; examination via Optical Microscopy.</li>
+                  <li>Glass Knife Boat design, prototype, and implementation.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                GFET (Graphene Field Effect Transistor) Fabrication
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Graphene fabrication via chemical vapor deposition (CVD).</li>
+                  <li>Optical lithography and thin-film deposition via evaporation (PVD).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Visualization (SEM / AFM)
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Atomic Force Microscopy (AFM) and Scanning Electron Microscopy (SEM).</li>
+                  <li>Nanoscale surface charge visualization.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Synthesis of Super-paramagnetic Iron Oxide Nanoparticles
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Crystallography and X-ray Diffraction (XRD); application of Bragg's Law.</li>
+                  <li>Crystal structure investigation via the Debye-Scherrer Method.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Surface Plasmon Resonance (SPR) Based Sensing
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Graphical analysis for Water-Gold interface; measured P and S polarized light with Air-Gold medium.</li>
+                  <li>Otto configuration and Kretschmann configuration.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                X-Ray Fluorescence (XRF)
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Energy Dispersive and Wavelength Dispersive XRF analysis.</li>
+                  <li>Energy calibration of SDD and qualitative multi-element sample analysis.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Nano-scale Materials for Supercapacitors
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Capacitance distribution and charge/discharge profiling for supercapacitor variants.</li>
+                  <li>Nanoporous anodic aluminium oxide film and atomic fabrication techniques.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Measurements of Mobility and Transconductance of GFET
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Graphene properties, application measurement mobility and transconductance analysis.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Memristor — Logic Gate Design (Bachelor's Thesis)
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Logic gates using MRL (Memristor Ratioed Logic) design style.</li>
+                  <li>Hybrid CMOS/memristor cell for universal logic gates; XOR gate comparable to CMOS implementation.</li>
+                  <li>Memristor window functions research.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Arithmetic Logic Unit (ALU)
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Designed and implemented an ALU for various computational tasks.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <button class="project-toggle" onclick="toggleProject(this)">
+                Quad-Copter (Drone) & Android Line Follower Robot
+                <i class="bi bi-chevron-right"></i>
+              </button>
+              <div class="project-details">
+                <ul>
+                  <li>Developed and programmed a quad-copter for aerial surveillance.</li>
+                  <li>Autonomous Android-based car robot for line following and obstacle detection.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Volunteering -->
+        <section class="section">
+          <h2 class="section-title"><i class="bi bi-heart-fill"></i> Volunteering</h2>
+
+          <div class="vol-item">
+            <div>
+              <div class="vol-role">Volunteer — Human Rights</div>
+              <div class="vol-org"><a href="https://www.amnesty.org/en/" target="_blank">Amnesty International</a></div>
+            </div>
+            <span class="vol-date">Feb 2022 – Present</span>
+          </div>
+
+          <div class="vol-item">
+            <div>
+              <div class="vol-role">Delegate — Energy &amp; Sustainable Development</div>
+              <div class="vol-org"><a href="https://www.un.org/en/mun" target="_blank">Model United Nations, Germany</a></div>
+            </div>
+            <span class="vol-date">Nov 2019 – Sep 2022</span>
+          </div>
+
+          <div class="vol-item">
+            <div>
+              <div class="vol-role">Student Volunteer — Environment</div>
+              <div class="vol-org"><a href="https://www.wateraid.org/bd/" target="_blank">WaterAid, Bhola, Bangladesh</a></div>
+            </div>
+            <span class="vol-date">Jun 2006 – Sep 2008</span>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/mydul/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.researchgate.net/profile/Md-Mydul-Islam-3" title="ResearchGate"><i class="bi bi-puzzle-fill"></i></a>
+        <a href="https://ieee-collabratec.ieee.org/app/p/mydul" title="IEEE"><i class="bi bi-lightbulb-fill"></i></a>
+        <a href="https://scholar.google.com/citations?user=bWTmly8AAAAJ&hl=en" title="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a>
+        <a href="https://github.com/mydul" title="GitHub"><i class="bi bi-github"></i></a>
+      </div>
+      <div class="footer-copy">
+        <span>Copyright © 2024 &nbsp;<strong>Mydul Islam</strong>&nbsp; · All Rights Reserved</span><br>
+        <span style="font-size:11px; opacity:0.5;">Designed by Mydul</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Project accordion
+    function toggleProject(btn) {
+      const details = btn.nextElementSibling;
+      const isOpen = details.classList.contains('open');
+      // close all
+      document.querySelectorAll('.project-details.open').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.project-toggle.active').forEach(b => b.classList.remove('active'));
+      // open clicked if it was closed
+      if (!isOpen) {
+        details.classList.add('open');
+        btn.classList.add('active');
+      }
+    }
+
+    // Animate language bars on load
+    window.addEventListener('load', () => {
+      const fills = document.querySelectorAll('.lang-fill');
+      fills.forEach(f => {
+        const w = f.style.width;
+        f.style.width = '0';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { f.style.width = w; });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
