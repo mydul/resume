@@ -813,22 +813,13 @@
       color: var(--text-muted);
       font-size: 16px;
       transition: all 0.2s;
-      opacity: 0;
-      transform: scale(0.85);
-      pointer-events: none;
     }
-
-    .float-btn.visible {
-      opacity: 1;
-      transform: scale(1);
-      pointer-events: all;
-    }
-
+    
     .float-btn.visible:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: #0d1b2e;
-    transform: scale(1.08);
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0d1b2e;
+      transform: scale(1.08);
     }
 
     /* ══════════════════════════════════════════
@@ -1670,27 +1661,6 @@
   .map(id => document.getElementById(id)).filter(Boolean);
   const sectionNav = document.getElementById('section-nav');
 
-  function updateFloatBtns() {
-  const atTop = window.scrollY < 200;
-  const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 200;
-  document.getElementById('btn-top').classList.toggle('visible', !atTop);
-  document.getElementById('btn-bottom').classList.toggle('visible', !atBottom);
-  }
-
-  window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY + 120;
-  // Scrolled shadow
-  sectionNav.classList.toggle('scrolled', window.scrollY > 10);
-  // Active nav link
-  let current = sections[0];
-  sections.forEach(sec => { if (scrollY >= sec.offsetTop) current = sec; });
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
-  });
-  // Float buttons
-  updateFloatBtns();
-  });
-  updateFloatBtns(); // run on page load
 </script>
 
 </body>
