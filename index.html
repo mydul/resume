@@ -1667,33 +1667,30 @@
   /* ── Sticky Nav: active link on scroll ── */
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = ['sec-profile','sec-experience','sec-education','sec-projects','sec-volunteering','sec-references']
-    .map(id => document.getElementById(id)).filter(Boolean);
-
+  .map(id => document.getElementById(id)).filter(Boolean);
   const sectionNav = document.getElementById('section-nav');
 
-  // Initialize float button visibility on page load
-  document.getElementById('btn-top').classList.remove('visible');
-  document.getElementById('btn-bottom').classList.add('visible');
-  
+  function updateFloatBtns() {
+  const atTop = window.scrollY < 200;
+  const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 200;
+  document.getElementById('btn-top').classList.toggle('visible', !atTop);
+  document.getElementById('btn-bottom').classList.toggle('visible', !atBottom);
+  }
+
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY + 120;
-
-    // Scrolled shadow
-    sectionNav.classList.toggle('scrolled', window.scrollY > 10);
-
-    // Active nav link
-    let current = sections[0];
-    sections.forEach(sec => { if (scrollY >= sec.offsetTop) current = sec; });
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
-    });
-
-    // Float buttons visibility
-    const atTop = window.scrollY < 200;
-    const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 200;
-    document.getElementById('btn-top').classList.toggle('visible', !atTop);
-    document.getElementById('btn-bottom').classList.toggle('visible', !atBottom);
+  const scrollY = window.scrollY + 120;
+  // Scrolled shadow
+  sectionNav.classList.toggle('scrolled', window.scrollY > 10);
+  // Active nav link
+  let current = sections[0];
+  sections.forEach(sec => { if (scrollY >= sec.offsetTop) current = sec; });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
   });
+  // Float buttons
+  updateFloatBtns();
+  });
+  updateFloatBtns(); // run on page load
 </script>
 
 </body>
