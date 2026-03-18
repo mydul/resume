@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Mydul Islam — Project Manager & Nanotech Engineer</title>
+  <meta name="description" content="Project Manager & Micro and Nanotech Engineer based in Stuttgart, Germany." />
+  <meta name="author" content="Md Mydul Islam" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Md Mydul Islam — Project Manager & Nanotech Engineer" />
+  <meta property="og:description" content="5+ years R&D and engineering. PMP certified. Stuttgart, Germany." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <style>
+    /* ══════════════════════════════════════════
+       CSS VARIABLES — Light & Dark
+    ══════════════════════════════════════════ */
+    :root {
+      --navy:        #0d1b2e;
+      --navy-mid:    #162035;
+      --navy-light:  #1e2d47;
+      --gold:        #c9a96e;
+      --gold-light:  #e2c99a;
+      --gold-pale:   #f5eddc;
+      --slate:       #4a5568;
+      --white:       #ffffff;
+      --text-body:   #2d3748;
+      --text-muted:  #718096;
+      --border:      #dde3ea;
+      --bg-page:     #f0f3f7;
+      --bg-card:     #ffffff;
+      --bg-sidebar:  #f7f9fb;
+      --bg-input:    #ffffff;
+      --shadow-sm:   0 2px 8px rgba(13,27,46,0.08);
+      --shadow-md:   0 8px 32px rgba(13,27,46,0.12);
+      --shadow-lg:   0 20px 60px rgba(13,27,46,0.18);
+      --radius:      12px;
+      --radius-sm:   6px;
+    }
+
+    [data-theme="dark"] {
+      --navy:        #c9a96e;
+      --navy-mid:    #e2c99a;
+      --navy-light:  #1e2d47;
+      --gold:        #c9a96e;
+      --gold-light:  #e2c99a;
+      --gold-pale:   #2a2210;
+      --slate:       #a0aec0;
+      --white:       #1a1f2e;
+      --text-body:   #e2e8f0;
+      --text-muted:  #718096;
+      --border:      #2d3748;
+      --bg-page:     #0f1117;
+      --bg-card:     #1a1f2e;
+      --bg-sidebar:  #151a27;
+      --bg-input:    #1a1f2e;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,0.3);
+      --shadow-md:   0 8px 32px rgba(0,0,0,0.4);
+      --shadow-lg:   0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ══════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-body);
+      background: var(--bg-page);
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(201,169,110,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(13,27,46,0.05) 0%, transparent 60%);
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold); transition: color 0.2s; }
+
+    /* ══════════════════════════════════════════
+       TOP TOOLBAR (Dark Mode + Lang + Download)
+    ══════════════════════════════════════════ */
+    .toolbar {
+      max-width: 1100px;
+      margin: 0 auto 14px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-body);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .toolbar-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0d1b2e;
+    }
+
+    .toolbar-btn i { font-size: 13px; }
+
+    .toolbar-btn.active-lang {
+      background: var(--gold-pale);
+      border-color: var(--gold);
+      color: #0d1b2e;
+      font-weight: 600;
+    }
+
+    .lang-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      margin: 0 2px;
+    }
+
+    /* ══════════════════════════════════════════
+       PAGE WRAPPER
+    ══════════════════════════════════════════ */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    #top { display: block; }
+
+    .header {
+      background: linear-gradient(135deg, #0d1b2e 0%, #1e2d47 100%);
+      padding: 52px 60px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 40%;
+      width: 200px; height: 200px;
+      border: 1px solid rgba(201,169,110,0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c9a96e 0%, #e2c99a 100%);
+      z-index: 0;
+    }
+
+    .avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative; z-index: 1;
+      display: block;
+      border: 3px solid #0d1b2e;
+    }
+
+    .avatar-fallback {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #162035, #1e2d47);
+      border: 3px solid #c9a96e;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; color: #c9a96e; font-weight: 600;
+      position: relative; z-index: 1;
+    }
+
+    .header-text { flex: 1; }
+
+    .header-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .header-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    /* Open to Work badge */
+    .otw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6ee7b7;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .otw-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 0 rgba(52,211,153,0.5);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%   { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+      70%  { box-shadow: 0 0 0 7px rgba(52,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+    }
+
+    .header-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #e2c99a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      list-style: none;
+    }
+
+    .header-contacts li {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 13.5px; color: rgba(255,255,255,0.78);
+      transition: color 0.2s;
+    }
+
+    .header-contacts li:hover { color: #e2c99a; }
+    .header-contacts i { color: #c9a96e; font-size: 14px; flex-shrink: 0; }
+    .header-contacts a { color: inherit; }
+
+    /* ══════════════════════════════════════════
+       METRICS STRIP
+    ══════════════════════════════════════════ */
+    .metrics-strip {
+      background: linear-gradient(90deg, #162035 0%, #1a2840 50%, #162035 100%);
+      border-top: 1px solid rgba(201,169,110,0.2);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #c9a96e;
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: center;
+    }
+
+    .metric-sep {
+      width: 1px;
+      background: rgba(201,169,110,0.2);
+      align-self: stretch;
+    }
+
+    /* ══════════════════════════════════════════
+       NAV BAR (sticky section links)
+    ══════════════════════════════════════════ */
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .section-nav.scrolled {
+      box-shadow: 0 2px 16px rgba(13,27,46,0.1);
+    }
+
+    .section-nav::-webkit-scrollbar { display: none; }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 13px 16px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-link i { font-size: 12px; }
+
+    .nav-link:hover {
+      color: var(--gold);
+      border-bottom-color: rgba(201,169,110,0.4);
+    }
+
+    .nav-link.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ══════════════════════════════════════════
+       BODY GRID
+    ══════════════════════════════════════════ */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 600px;
+    }
+
+    /* ══════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════ */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 44px 28px;
+      transition: background 0.3s;
+    }
+
+    /* ══════════════════════════════════════════
+       MAIN
+    ══════════════════════════════════════════ */
+    .main { padding: 44px 48px; }
+
+    /* ══════════════════════════════════════════
+       SECTIONS
+    ══════════════════════════════════════════ */
+    .section { margin-bottom: 38px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-body);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title i { color: var(--gold); font-size: 13px; }
+
+    /* ══════════════════════════════════════════
+       SKILL TAGS
+    ══════════════════════════════════════════ */
+    .skill-group { margin-bottom: 20px; }
+
+    .skill-group-label {
+      font-size: 12px; font-weight: 600;
+      color: var(--text-body); margin-bottom: 8px; letter-spacing: 0.3px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .skill-tag {
+      font-size: 11.5px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--slate);
+      padding: 3px 9px;
+      border-radius: 100px;
+      line-height: 1.6;
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: #0d1b2e;
+      color: #e2c99a;
+      border-color: #0d1b2e;
+    }
+
+    [data-theme="dark"] .skill-tag:hover {
+      background: var(--gold);
+      color: #0d1b2e;
+      border-color: var(--gold);
+    }
+
+    /* ══════════════════════════════════════════
+       LANGUAGE BARS
+    ══════════════════════════════════════════ */
+    .lang-item { margin-bottom: 14px; }
+
+    .lang-header { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .lang-name { font-size: 13px; font-weight: 500; color: var(--text-body); }
+    .lang-level { font-size: 11px; color: var(--text-muted); }
+
+    .lang-bar { height: 4px; background: var(--border); border-radius: 100px; overflow: hidden; }
+
+    .lang-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0d1b2e, #c9a96e);
+      border-radius: 100px;
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    [data-theme="dark"] .lang-fill {
+      background: linear-gradient(90deg, #c9a96e, #e2c99a);
+    }
+
+    /* ══════════════════════════════════════════
+       CERT LIST
+    ══════════════════════════════════════════ */
+    .cert-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .cert-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .cert-name {
+      font-size: 12.5px; font-weight: 600;
+      color: var(--text-body); line-height: 1.4; margin-bottom: 2px;
+    }
+
+    .cert-name a { color: var(--text-body); }
+    .cert-name a:hover { color: var(--gold); }
+
+    .cert-meta {
+      font-size: 11.5px; color: var(--text-muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    .cert-meta i { font-size: 11px; color: var(--gold); }
+
+    /* ══════════════════════════════════════════
+       PROFILE
+    ══════════════════════════════════════════ */
+    .profile-text {
+      font-size: 14.5px; line-height: 1.75; color: var(--slate);
+      background: var(--bg-sidebar);
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* ══════════════════════════════════════════
+       TIMELINE
+    ══════════════════════════════════════════ */
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-item {
+      padding-left: 24px;
+      padding-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute; left: -5px; top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px; flex-wrap: wrap;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+
+    .timeline-badge {
+      font-size: 11.5px; font-weight: 500;
+      color: var(--gold);
+      background: var(--gold-pale);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,169,110,0.3);
+    }
+
+    .timeline-org {
+      font-size: 13px; color: var(--slate);
+      font-weight: 500; margin-top: 3px;
+    }
+
+    .timeline-org a { color: var(--slate); }
+    .timeline-org a:hover { color: var(--gold); }
+
+    .timeline-body { margin-top: 10px; }
+
+    .timeline-body ul { list-style: none; padding: 0; }
+
+    .timeline-body ul li {
+      font-size: 13.5px; color: var(--slate);
+      line-height: 1.65;
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+
+    .timeline-body ul li::before {
+      content: '›';
+      position: absolute; left: 0;
+      color: var(--gold); font-size: 16px; line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════════════
+       PROJECTS ACCORDION
+    ══════════════════════════════════════════ */
+    .projects-grid { display: flex; flex-direction: column; gap: 6px; }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(201,169,110,0.4);
+    }
+
+    .project-toggle {
+      width: 100%; background: none; border: none;
+      padding: 11px 16px; text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px; font-weight: 500; color: var(--text-body);
+      transition: background 0.2s;
+    }
+
+    .project-toggle:hover { background: var(--bg-sidebar); }
+    .project-toggle.active { background: var(--gold-pale); }
+
+    [data-theme="dark"] .project-toggle.active { background: #2a2210; color: #e2c99a; }
+
+    .project-toggle i { font-size: 12px; color: var(--gold); flex-shrink: 0; transition: transform 0.25s; }
+    .project-toggle.active i { transform: rotate(90deg); }
+
+    .project-details {
+      display: none;
+      padding: 2px 16px 12px 28px;
+      background: var(--bg-sidebar);
+    }
+
+    .project-details.open { display: block; animation: slideDown 0.2s ease; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-details ul { list-style: none; padding: 0; }
+
+    .project-details ul li {
+      font-size: 13px; color: var(--slate);
+      line-height: 1.6; padding: 2px 0 2px 14px; position: relative;
+    }
+
+    .project-details ul li::before {
+      content: '·'; position: absolute; left: 0;
+      color: var(--gold); font-size: 18px; line-height: 1.2;
+    }
+
+    /* ══════════════════════════════════════════
+       VOLUNTEERING
+    ══════════════════════════════════════════ */
+    .vol-item {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .vol-item:first-child { padding-top: 0; }
+    .vol-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .vol-role { font-size: 13.5px; font-weight: 600; color: var(--text-body); margin-bottom: 2px; }
+    .vol-org { font-size: 12.5px; color: var(--slate); }
+    .vol-org a { color: var(--slate); }
+    .vol-org a:hover { color: var(--gold); }
+
+    .vol-date {
+      font-size: 11.5px; font-weight: 500; color: var(--gold);
+      background: var(--gold-pale);
+      padding: 2px 8px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+      border: 1px solid rgba(201,169,110,0.25);
+    }
+
+    /* ══════════════════════════════════════════
+       REFERENCES
+    ══════════════════════════════════════════ */
+    .references-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-sidebar);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+    }
+
+    .references-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gold-pale);
+      border: 1px solid rgba(201,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .references-icon i { color: var(--gold); font-size: 18px; }
+
+    .references-text-main {
+      font-size: 14px; font-weight: 600; color: var(--text-body); margin-bottom: 3px;
+    }
+
+    .references-text-sub {
+      font-size: 13px; color: var(--text-muted);
+    }
+
+    .references-text-sub a { color: var(--gold); }
+    .references-text-sub a:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    #bottom { display: block; }
+
+    .footer {
+      background: #0d1b2e;
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; flex-wrap: wrap;
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 6px; }
+
+    .footer-socials { display: flex; gap: 4px; }
+
+    .footer-socials a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .footer-socials a:hover {
+      background: #c9a96e;
+      border-color: #c9a96e;
+      color: #0d1b2e;
+      transform: translateY(-2px);
+    }
+
+    .footer-updated {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.3);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    .footer-updated i { color: #c9a96e; font-size: 11px; }
+
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.4); text-align: right; }
+    .footer-copy strong { color: #e2c99a; }
+
+    /* ══════════════════════════════════════════
+       FLOATING BUTTONS (Go Top / Bottom)
+    ══════════════════════════════════════════ */
+    .float-btns {
+      position: fixed;
+      bottom: 32px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 999;
+    }
+
+    .float-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 16px;
+      transition: all 0.2s;
+      opacity: 0;
+      transform: scale(0.85);
+      pointer-events: none;
+    }
+
+    .float-btn.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
+
+    .float-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0d1b2e;
+      transform: scale(1.08);
+    }
+
+    /* ══════════════════════════════════════════
+       LANGUAGE TOGGLE CONTENT
+    ══════════════════════════════════════════ */
+    [data-lang="en"] .de-only { display: none; }
+    [data-lang="de"] .en-only { display: none; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      body { padding: 0 0 80px; }
+      .page { border-radius: 0; }
+      .header { padding: 36px 28px 32px; }
+      .header-inner { gap: 24px; }
+      .header-name { font-size: 2rem; }
+      .avatar, .avatar-fallback { width: 90px; height: 90px; }
+      .metrics-strip { padding: 16px 28px; }
+      .section-nav { padding: 0 20px; }
+      .body-grid { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 28px; }
+      .main { padding: 32px 28px; }
+      .footer { padding: 24px 28px; }
+      .footer-copy { text-align: left; }
+      .toolbar { padding: 0 12px; }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner { flex-direction: column; text-align: center; }
+      .header-contacts { justify-content: center; }
+      .header-top-row { justify-content: center; flex-direction: column; align-items: center; }
+      .metric-sep { display: none; }
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; }
+      .project-details { display: block !important; }
+      .toolbar, .float-btns, .section-nav { display: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+<span id="top"></span>
+
+<!-- ══ TOOLBAR ══ -->
+<div class="toolbar">
+  <!-- Language -->
+  <button class="toolbar-btn active-lang" id="btn-en" onclick="setLang('en')" title="English">
+    <i class="bi bi-globe"></i> EN
+  </button>
+  <div class="lang-divider"></div>
+  <button class="toolbar-btn" id="btn-de" onclick="setLang('de')" title="Deutsch">
+    <i class="bi bi-globe"></i> DE
+  </button>
+
+  <!-- Dark mode -->
+  <button class="toolbar-btn" id="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+    <i class="bi bi-moon-fill" id="theme-icon"></i>
+    <span id="theme-label">Dark Mode</span>
+  </button>
+
+  <!-- Download CV -->
+  <a class="toolbar-btn" href="https://drive.google.com/file/d/1fjpT25Q2xd73KJH_0PDeusH7jSwrbx6k/view?usp=sharing"
+     target="_blank" title="Download CV as PDF">
+    <i class="bi bi-file-earmark-arrow-down-fill"></i>
+    <span class="en-only">Download CV</span>
+    <span class="de-only">Lebenslauf laden</span>
+  </a>
+</div>
+
+<!-- ══ PAGE ══ -->
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="avatar-wrap">
+        <img class="avatar" src="assets/images/Mydul_Pro_Pic.png" alt="Md Mydul Islam"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="avatar-fallback" style="display:none;">MI</div>
+      </div>
+      <div class="header-text">
+        <div class="header-top-row">
+          <h1 class="header-name">Md Mydul Islam</h1>
+          <span class="otw-badge">
+            <span class="otw-dot"></span>
+            <span class="en-only">Open to Opportunities</span>
+            <span class="de-only">Offen für Stellen</span>
+          </span>
+        </div>
+        <p class="header-title en-only">Project Manager &nbsp;·&nbsp; Nanotech Engineer</p>
+        <p class="header-title de-only">Projektmanager &nbsp;·&nbsp; Nanotechnik-Ingenieur</p>
+        <ul class="header-contacts">
+          <li><i class="bi bi-geo-alt-fill"></i> Stuttgart, Germany</li>
+          <li><i class="bi bi-telephone-fill"></i><a href="tel:+4915901390177">+49 (0)159 0139 0177</a></li>
+          <li><i class="bi bi-envelope-fill"></i><a href="mailto:islam@mydul.me">islam@mydul.me</a></li>
+          <li><i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/in/mydul/" target="_blank">linkedin.com/in/mydul</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── METRICS STRIP ── -->
+  <div class="metrics-strip">
+    <div class="metric">
+      <span class="metric-value">5+</span>
+      <span class="metric-label en-only">Years Experience</span>
+      <span class="metric-label de-only">Jahre Erfahrung</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-value">PMP</span>
+      <span class="metric-label en-only">Certified</span>
+      <span class="metric-label de-only">Zertifiziert</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-value">3</span>
+      <span class="metric-label en-only">Research Publications</span>
+      <span class="metric-label de-only">Forschungsartikel</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-value">30%</span>
+      <span class="metric-label en-only">Defect Reduction</span>
+      <span class="metric-label de-only">Fehlerreduktion</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-value">25%</span>
+      <span class="metric-label en-only">Efficiency Gained</span>
+      <span class="metric-label de-only">Effizienzsteigerung</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-value">13+</span>
+      <span class="metric-label en-only">Research Projects</span>
+      <span class="metric-label de-only">Forschungsprojekte</span>
+    </div>
+  </div>
+
+  <!-- ── STICKY NAV ── -->
+  <nav class="section-nav" id="section-nav">
+    <a class="nav-link active" href="#sec-profile"><i class="bi bi-person-fill"></i>
+      <span class="en-only">Profile</span><span class="de-only">Profil</span></a>
+    <a class="nav-link" href="#sec-experience"><i class="bi bi-briefcase-fill"></i>
+      <span class="en-only">Experience</span><span class="de-only">Erfahrung</span></a>
+    <a class="nav-link" href="#sec-education"><i class="bi bi-mortarboard-fill"></i>
+      <span class="en-only">Education</span><span class="de-only">Ausbildung</span></a>
+    <a class="nav-link" href="#sec-projects"><i class="bi bi-flask-fill"></i>
+      <span class="en-only">Projects</span><span class="de-only">Projekte</span></a>
+    <a class="nav-link" href="#sec-volunteering"><i class="bi bi-heart-fill"></i>
+      <span class="en-only">Volunteering</span><span class="de-only">Ehrenamt</span></a>
+    <a class="nav-link" href="#sec-references"><i class="bi bi-people-fill"></i>
+      <span class="en-only">References</span><span class="de-only">Referenzen</span></a>
+  </nav>
+
+  <!-- ── BODY ── -->
+  <div class="body-grid">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <!-- Skills -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="bi bi-cpu-fill"></i>
+          <span class="en-only">Skills</span>
+          <span class="de-only">Fähigkeiten</span>
+        </h2>
+
+        <div class="skill-group">
+          <div class="skill-group-label en-only">Project Management</div>
+          <div class="skill-group-label de-only">Projektmanagement</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Waterfall</span>
+            <span class="skill-tag">Kanban</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Asana</span>
+            <span class="skill-tag">Smartsheet</span>
+            <span class="skill-tag">Signavio</span>
+            <span class="skill-tag">Polarion</span>
+            <span class="skill-tag">MS Project</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">Gantt Chart</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label en-only">Nanofabrication &amp; Tools</div>
+          <div class="skill-group-label de-only">Nanofabrikation &amp; Werkzeuge</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Photolithography</span>
+            <span class="skill-tag">EBL</span>
+            <span class="skill-tag">RIE</span>
+            <span class="skill-tag">Epitaxy</span>
+            <span class="skill-tag">CVD / PVD</span>
+            <span class="skill-tag">Sputtering</span>
+            <span class="skill-tag">SEM / TEM</span>
+            <span class="skill-tag">AFM</span>
+            <span class="skill-tag">XRF / XRD / XPS</span>
+            <span class="skill-tag">THz Spectroscopy</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label en-only">Programming</div>
+          <div class="skill-group-label de-only">Programmierung</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">NumPy / Pandas</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Linux Shell</span>
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label en-only">Simulation &amp; Software</div>
+          <div class="skill-group-label de-only">Simulation &amp; Software</div>
+          <div class="skill-tags">
+            <span class="skill-tag">MATLAB / Simulink</span>
+            <span class="skill-tag">COMSOL</span>
+            <span class="skill-tag">ANSYS HFSS</span>
+            <span class="skill-tag">Cadence</span>
+            <span class="skill-tag">Altium</span>
+            <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">OriginPro</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Languages -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="bi bi-translate"></i>
+          <span class="en-only">Languages</span>
+          <span class="de-only">Sprachen</span>
+        </h2>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span class="lang-name">Bengali</span>
+            <span class="lang-level en-only">Native</span>
+            <span class="lang-level de-only">Muttersprache</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" data-width="100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span class="lang-name">English</span>
+            <span class="lang-level">C1 — Proficient</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" data-width="90%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span class="lang-name">German / Deutsch</span>
+            <span class="lang-level">B1 — Intermediate</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" data-width="55%"></div></div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="bi bi-patch-check-fill"></i>
+          <span class="en-only">Certifications</span>
+          <span class="de-only">Zertifikate</span>
+        </h2>
+        <div class="cert-item">
+          <div class="cert-name">
+            <a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank">
+              Project Management Professional (PMP)
+            </a>
+          </div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Oct 2024 · PMI</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">
+            <a href="https://www.coursera.org/account/accomplishments/specialization/EY3D5XTTAH3D" target="_blank">
+              Google Project Management Certificate
+            </a>
+          </div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Mar 2024 · Google</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">Zertifikat Deutsch (B1)</div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Feb 2024 · telc</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">Python Bootcamp</div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2021 · Coursera</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">MATLAB / Simulink</div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Apr 2019 · Udemy</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">
+            <a href="https://drive.google.com/file/d/1xEc55CRQgI4JGHgirDSIIVabQFZyui8H/view?usp=sharing" target="_blank">
+              Extra-Curricular Activities
+            </a>
+          </div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Mar 2018 · EEE Club | GUB</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">
+            <a href="https://drive.google.com/file/d/1boJNrMjg1emf_Z0ZOUjUIIhKWdw0q0uM/view?usp=sharing" target="_blank">
+              Certification of Leadership
+            </a>
+          </div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2017 · British Council</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">Project Showcasing</div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2016 · IEEE</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">
+            <a href="https://drive.google.com/file/d/1xAFW8fNnTJtslRx_o5OQAKoEW4S9KlUc/view?usp=sharing" target="_blank">
+              National Book Reading Competition
+            </a>
+          </div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Oct 2015 · British Council</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">COMSOL Multiphysics</div>
+          <div class="cert-meta"><i class="bi bi-calendar3"></i> Dec 2014 · Daffodil Int'l Univ.</div>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <main class="main">
+
+      <!-- Profile -->
+      <section class="section" id="sec-profile">
+        <h2 class="section-title">
+          <i class="bi bi-person-lines-fill"></i>
+          <span class="en-only">Profile</span>
+          <span class="de-only">Profil</span>
+        </h2>
+        <p class="profile-text en-only">
+          Project Manager with 5+ years of experience in R&D and engineering. Proven expertise in leading teams,
+          managing projects, implementing agile methodologies, and delivering innovative solutions in the semiconductor
+          industry. Leverages nanofabrication, materials science, and electrical engineering expertise with strong
+          communication and problem-solving abilities to manage complex processes and drive successful outcomes.
+        </p>
+        <p class="profile-text de-only">
+          Projektmanager mit über 5 Jahren Erfahrung in F&E und Engineering. Nachgewiesene Expertise in der Teamführung,
+          im Projektmanagement, in der Implementierung agiler Methoden und der Lieferung innovativer Lösungen in der
+          Halbleiterindustrie. Verbindet Kenntnisse in Nanofabrikation, Materialwissenschaften und Elektrotechnik
+          mit starken kommunikativen und analytischen Fähigkeiten, um komplexe Prozesse zu steuern und erfolgreiche
+          Ergebnisse zu erzielen.
+        </p>
+      </section>
+
+      <!-- Professional Experience -->
+      <section class="section" id="sec-experience">
+        <h2 class="section-title">
+          <i class="bi bi-briefcase-fill"></i>
+          <span class="en-only">Professional Experience</span>
+          <span class="de-only">Berufserfahrung</span>
+        </h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">Project Manager</div>
+              <div class="timeline-title de-only">Projektmanager</div>
+              <span class="timeline-badge">Sep 2023 – <span class="en-only">Present</span><span class="de-only">Heute</span></span>
+            </div>
+            <div class="timeline-org">
+              <a href="https://magnetic-sense.com/" target="_blank">Magnetic Sense GmbH</a>
+              &nbsp;·&nbsp; Stuttgart, Germany
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Lead multiple R&D projects ensuring success through risk management and change management; implement agile methodologies as Scrum Master, overseeing systems engineering, prototyping, and testing.</li>
+                <li class="de-only">Leitung mehrerer F&E-Projekte durch Risiko- und Änderungsmanagement; Implementierung agiler Methoden als Scrum Master, Überwachung von Systems Engineering, Prototyping und Testing.</li>
+                <li class="en-only">Increased project efficiency by 10% through improved planning, resource management, and cost control.</li>
+                <li class="de-only">Steigerung der Projekteffizienz um 10 % durch verbesserte Planung, Ressourcen- und Kostenmanagement.</li>
+                <li class="en-only">Defined and leveraged processes and teams to achieve project milestones; fostered strategic thinking and effective stakeholder communication.</li>
+                <li class="de-only">Prozesse und Teams definiert und genutzt, um Projektmeilensteine zu erreichen; strategisches Denken und effektive Kommunikation mit Stakeholdern gefördert.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">Shift Manager</div>
+              <div class="timeline-title de-only">Schichtleiter</div>
+              <span class="timeline-badge">Nov 2021 – Feb 2023</span>
+            </div>
+            <div class="timeline-org">ITS Industriebedarf GmbH &nbsp;·&nbsp; Siegen, NRW, Germany</div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Spearheaded a 25–30 member team, leveraging expertise in team management, quality control, and problem-solving to drive development and enhance quality.</li>
+                <li class="de-only">Führung eines 25–30-köpfigen Teams; Einsatz von Expertise in Teammanagement, Qualitätskontrolle und Problemlösung zur Entwicklungsförderung.</li>
+                <li class="en-only">Achieved 30% reduction in defects and 25% improvement in overall project efficiency.</li>
+                <li class="de-only">30 % Fehlerreduktion und 25 % Effizienzsteigerung im Gesamtprojekt erreicht.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">Manufacturing Process Engineer</div>
+              <div class="timeline-title de-only">Fertigungsprozessingenieur</div>
+              <span class="timeline-badge">Jul 2020 – Nov 2021</span>
+            </div>
+            <div class="timeline-org">ITS Industriebedarf GmbH &nbsp;·&nbsp; Netphen, NRW, Germany</div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Led cross-functional teams developing and optimizing manufacturing processes, resulting in reduced production time and a 15% increase in overall output.</li>
+                <li class="de-only">Führung funktionsübergreifender Teams zur Entwicklung und Optimierung von Fertigungsprozessen; Reduzierung der Produktionszeit und 15 % Steigerung des Gesamtoutputs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">Research Assistant</div>
+              <div class="timeline-title de-only">Wissenschaftliche Hilfskraft</div>
+              <span class="timeline-badge">May 2017 – May 2019</span>
+            </div>
+            <div class="timeline-org">Green University of Bangladesh &nbsp;·&nbsp; Dhaka, Bangladesh</div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Assisted in 4 project groups spanning semiconductor devices, power electronics, MEMS, and materials research, contributing to 3 national and international research publications.</li>
+                <li class="de-only">Mitarbeit in 4 Projektgruppen zu Halbleiterbauelementen, Leistungselektronik, MEMS und Materialforschung; Beitrag zu 3 nationalen und internationalen Forschungsveröffentlichungen.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section" id="sec-education">
+        <h2 class="section-title">
+          <i class="bi bi-mortarboard-fill"></i>
+          <span class="en-only">Education</span>
+          <span class="de-only">Ausbildung</span>
+        </h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">M.Sc. in Nanosciences and Nanotechnology</div>
+              <div class="timeline-title de-only">M.Sc. Nanowissenschaften und Nanotechnologie</div>
+              <span class="timeline-badge">May 2023</span>
+            </div>
+            <div class="timeline-org">
+              <a href="https://www.uni-siegen.de/start/" target="_blank">University of Siegen</a>
+              &nbsp;·&nbsp; Siegen, Germany
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Collaborated with interdisciplinary research teams in clean room environments on nanofabrication, nanoanalysis, and material characterization.</li>
+                <li class="de-only">Zusammenarbeit mit interdisziplinären Forschungsteams im Reinraum zu Nanofabrikation, Nanoanalyse und Materialcharakterisierung.</li>
+                <li class="en-only">Proficiency in quantum physics, materials science, thin film deposition, microwave, THz wave, and photonics devices.</li>
+                <li class="de-only">Kenntnisse in Quantenphysik, Materialwissenschaften, Dünnschichtabscheidung, Mikrowellen, THz-Wellen und Photonikbauelementen.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-top">
+              <div class="timeline-title en-only">B.Sc. in Electrical and Electronic Engineering</div>
+              <div class="timeline-title de-only">B.Sc. Elektro- und Elektronikingenieurwesen</div>
+              <span class="timeline-badge">May 2016</span>
+            </div>
+            <div class="timeline-org">
+              <a href="https://www.green.edu.bd/" target="_blank">Green University of Bangladesh</a>
+              &nbsp;·&nbsp; Dhaka, Bangladesh
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li class="en-only">Expertise in digital signal processing, solid-state physics, analog and digital circuits, control systems, optoelectronics, and electrical measurements.</li>
+                <li class="de-only">Kenntnisse in digitaler Signalverarbeitung, Festkörperphysik, analogen und digitalen Schaltkreisen, Regeltechnik, Optoelektronik und Elektrischen Messungen.</li>
+                <li class="en-only">Projects in microcontrollers, PCB layout design, power electronics, MEMS, EDA design, and CMOS technologies.</li>
+                <li class="de-only">Projekte zu Mikrocontrollern, PCB-Layout, Leistungselektronik, MEMS, EDA-Design und CMOS-Technologien.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Research Projects -->
+      <section class="section" id="sec-projects">
+        <h2 class="section-title">
+          <i class="bi bi-flask-fill"></i>
+          <span class="en-only">Research Projects</span>
+          <span class="de-only">Forschungsprojekte</span>
+        </h2>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              THz Metamaterial-based Microfluidic Sensor Fabrication and Measurement
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>THz frequency domain spectroscopy for precise material characterization.</li>
+                <li>Designed novel microfluidic devices integrated with metamaterial-based sensors.</li>
+                <li>Employed Photolithography, RIE, Plasma etching, and Lift-Off for precise sensor fabrication.</li>
+                <li>Polymer casting via TMCS surface modification and PDMS utilization.</li>
+                <li>CVD and PVD methods for advanced material deposition; optical profilometry QC.</li>
+                <li>HQ+ 2D graphene transfer system for high-performance applications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Cross-sectional Preparation of Fuel Cells using Ultramicrotome Method
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Cross-sectioning PEM fuel cells for TEM analysis.</li>
+                <li>Researched Diamond and Glass knife angles; examination via Optical Microscopy.</li>
+                <li>Glass Knife Boat design, prototype, and implementation.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              GFET (Graphene Field Effect Transistor) Fabrication
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Graphene fabrication via chemical vapor deposition (CVD).</li>
+                <li>Optical lithography and thin-film deposition via evaporation (PVD).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Visualization (SEM / AFM)
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Atomic Force Microscopy (AFM) and Scanning Electron Microscopy (SEM).</li>
+                <li>Nanoscale surface charge visualization.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Synthesis of Super-paramagnetic Iron Oxide Nanoparticles
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Crystallography and X-ray Diffraction (XRD); application of Bragg's Law.</li>
+                <li>Crystal structure investigation via the Debye-Scherrer Method.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Surface Plasmon Resonance (SPR) Based Sensing
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Graphical analysis for Water-Gold interface; measured P and S polarized light with Air-Gold medium.</li>
+                <li>Otto configuration and Kretschmann configuration.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              X-Ray Fluorescence (XRF)
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Energy Dispersive and Wavelength Dispersive XRF analysis.</li>
+                <li>Energy calibration of SDD and qualitative multi-element sample analysis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Nano-scale Materials for Supercapacitors
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Capacitance distribution and charge/discharge profiling for supercapacitor variants.</li>
+                <li>Nanoporous anodic aluminium oxide film and atomic fabrication techniques.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Measurements of Mobility and Transconductance of GFET
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Graphene properties and application; mobility and transconductance analysis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Memristor — Logic Gate Design (Bachelor's Thesis)
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Logic gates using MRL (Memristor Ratioed Logic) design style.</li>
+                <li>Hybrid CMOS/memristor cell for universal logic gates; XOR gate comparable to CMOS implementation.</li>
+                <li>Memristor window functions research.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Arithmetic Logic Unit (ALU)
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Designed and implemented an ALU for various computational tasks.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <button class="project-toggle" onclick="toggleProject(this)">
+              Quad-Copter (Drone) &amp; Android Line Follower Robot
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Developed and programmed a quad-copter for aerial surveillance.</li>
+                <li>Autonomous Android-based car robot for line following and obstacle detection.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Volunteering -->
+      <section class="section" id="sec-volunteering">
+        <h2 class="section-title">
+          <i class="bi bi-heart-fill"></i>
+          <span class="en-only">Volunteering</span>
+          <span class="de-only">Ehrenamtliche Tätigkeiten</span>
+        </h2>
+
+        <div class="vol-item">
+          <div>
+            <div class="vol-role en-only">Volunteer — Human Rights</div>
+            <div class="vol-role de-only">Freiwilliger — Menschenrechte</div>
+            <div class="vol-org"><a href="https://www.amnesty.org/en/" target="_blank">Amnesty International</a></div>
+          </div>
+          <span class="vol-date">Feb 2022 – <span class="en-only">Present</span><span class="de-only">Heute</span></span>
+        </div>
+
+        <div class="vol-item">
+          <div>
+            <div class="vol-role en-only">Delegate — Energy &amp; Sustainable Development</div>
+            <div class="vol-role de-only">Delegierter — Energie &amp; Nachhaltige Entwicklung</div>
+            <div class="vol-org"><a href="https://www.un.org/en/mun" target="_blank">Model United Nations, Germany</a></div>
+          </div>
+          <span class="vol-date">Nov 2019 – Sep 2022</span>
+        </div>
+
+        <div class="vol-item">
+          <div>
+            <div class="vol-role en-only">Student Volunteer — Environment</div>
+            <div class="vol-role de-only">Studentischer Freiwilliger — Umwelt</div>
+            <div class="vol-org"><a href="https://www.wateraid.org/bd/" target="_blank">WaterAid, Bhola, Bangladesh</a></div>
+          </div>
+          <span class="vol-date">Jun 2006 – Sep 2008</span>
+        </div>
+
+      </section>
+
+      <!-- References -->
+      <section class="section" id="sec-references">
+        <h2 class="section-title">
+          <i class="bi bi-people-fill"></i>
+          <span class="en-only">References</span>
+          <span class="de-only">Referenzen</span>
+        </h2>
+        <div class="references-box">
+          <div class="references-icon">
+            <i class="bi bi-person-check-fill"></i>
+          </div>
+          <div>
+            <div class="references-text-main en-only">Available Upon Request</div>
+            <div class="references-text-main de-only">Auf Anfrage erhältlich</div>
+            <div class="references-text-sub en-only">
+              Professional and academic references are available upon request.
+              Please contact me at <a href="mailto:islam@mydul.me">islam@mydul.me</a> or via
+              <a href="https://www.linkedin.com/in/mydul/" target="_blank">LinkedIn</a>.
+            </div>
+            <div class="references-text-sub de-only">
+              Berufliche und akademische Referenzen sind auf Anfrage erhältlich.
+              Bitte kontaktieren Sie mich unter <a href="mailto:islam@mydul.me">islam@mydul.me</a> oder via
+              <a href="https://www.linkedin.com/in/mydul/" target="_blank">LinkedIn</a>.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/mydul/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.researchgate.net/profile/Md-Mydul-Islam-3" title="ResearchGate"><i class="bi bi-puzzle-fill"></i></a>
+        <a href="https://ieee-collabratec.ieee.org/app/p/mydul" title="IEEE"><i class="bi bi-lightbulb-fill"></i></a>
+        <a href="https://scholar.google.com/citations?user=bWTmly8AAAAJ&hl=en" title="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a>
+        <a href="https://github.com/mydul" title="GitHub"><i class="bi bi-github"></i></a>
+      </div>
+      <div class="footer-updated">
+        <i class="bi bi-clock-fill"></i>
+        <span class="en-only">Last updated: </span>
+        <span class="de-only">Zuletzt aktualisiert: </span>
+        <span id="last-updated"></span>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>Copyright © 2024 &nbsp;<strong>Mydul Islam</strong>&nbsp; · All Rights Reserved</span><br>
+      <span style="font-size:11px;opacity:0.4;">Designed by Mydul</span>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+<span id="bottom"></span>
+
+<!-- ── FLOATING BUTTONS ── -->
+<div class="float-btns">
+  <button class="float-btn" id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <button class="float-btn visible" id="btn-bottom" onclick="document.getElementById('bottom').scrollIntoView({behavior:'smooth'})" title="Go to bottom">
+    <i class="bi bi-arrow-down"></i>
+  </button>
+</div>
+
+<script>
+  /* ── Dark Mode ── */
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('theme-icon').className = isDark ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+    document.getElementById('theme-label').textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
+
+  // Restore saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('theme-icon').className = 'bi bi-sun-fill';
+    document.getElementById('theme-label').textContent = 'Light Mode';
+  }
+
+  /* ── Language Toggle ── */
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.getElementById('btn-en').classList.toggle('active-lang', lang === 'en');
+    document.getElementById('btn-de').classList.toggle('active-lang', lang === 'de');
+    localStorage.setItem('lang', lang);
+  }
+
+  const savedLang = localStorage.getItem('lang');
+  if (savedLang) setLang(savedLang);
+
+  /* ── Projects Accordion ── */
+  function toggleProject(btn) {
+    const details = btn.nextElementSibling;
+    const isOpen = details.classList.contains('open');
+    document.querySelectorAll('.project-details.open').forEach(d => d.classList.remove('open'));
+    document.querySelectorAll('.project-toggle.active').forEach(b => b.classList.remove('active'));
+    if (!isOpen) { details.classList.add('open'); btn.classList.add('active'); }
+  }
+
+  /* ── Language bars animate on load ── */
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.lang-fill').forEach(f => {
+      const w = f.getAttribute('data-width');
+      requestAnimationFrame(() => requestAnimationFrame(() => { f.style.width = w; }));
+    });
+  });
+
+  /* ── Last Updated Date ── */
+  (function() {
+    const d = new Date();
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    document.getElementById('last-updated').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  })();
+
+  /* ── Sticky Nav: active link on scroll ── */
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = ['sec-profile','sec-experience','sec-education','sec-projects','sec-volunteering','sec-references']
+    .map(id => document.getElementById(id)).filter(Boolean);
+
+  const sectionNav = document.getElementById('section-nav');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 120;
+
+    // Scrolled shadow
+    sectionNav.classList.toggle('scrolled', window.scrollY > 10);
+
+    // Active nav link
+    let current = sections[0];
+    sections.forEach(sec => { if (scrollY >= sec.offsetTop) current = sec; });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
+    });
+
+    // Float buttons visibility
+    const atTop = window.scrollY < 200;
+    const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 200;
+    document.getElementById('btn-top').classList.toggle('visible', !atTop);
+    document.getElementById('btn-bottom').classList.toggle('visible', !atBottom);
+  });
+</script>
+
+</body>
+</html>
