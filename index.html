@@ -824,11 +824,11 @@
       pointer-events: all;
     }
 
-    .float-btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #0d1b2e;
-      transform: scale(1.08);
+    .float-btn.visible:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #0d1b2e;
+    transform: scale(1.08);
     }
 
     /* ══════════════════════════════════════════
@@ -1671,6 +1671,10 @@
 
   const sectionNav = document.getElementById('section-nav');
 
+  // Initialize float button visibility on page load
+  document.getElementById('btn-top').classList.remove('visible');
+  document.getElementById('btn-bottom').classList.add('visible');
+  
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY + 120;
 
