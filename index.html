@@ -869,6 +869,215 @@
       .project-details { display: block !important; }
       .toolbar, .float-btns, .section-nav { display: none !important; }
     }
+    
+    /* ═══════════════════════════════════════════════════
+       DESIGN REFINEMENTS — Readability & Spacing
+       Add at the END of the existing stylesheet
+    ═══════════════════════════════════════════════════ */
+    
+    /* ── GLOBAL TYPOGRAPHY ── */
+    body {
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    
+    p {
+        margin-bottom: 0;
+    }
+    
+    /* ── MAIN CONTENT SPACING ── */
+    .main {
+        padding: 46px 50px;
+    }
+    
+    .section {
+        margin-bottom: 44px;
+    }
+    
+    .section-title {
+        margin-bottom: 20px;
+        padding-bottom: 11px;
+    }
+    
+    /* ── PROFILE ── */
+    .profile-text {
+        font-size: 14.5px;
+        line-height: 1.9;
+        letter-spacing: 0.05px;
+        color: var(--slate);
+        background: var(--bg-sidebar);
+        border-left: 3px solid var(--gold);
+        padding: 20px 24px;
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
+    
+    /* ── SIDEBAR ── */
+    .sidebar {
+        padding: 46px 28px;
+    }
+    
+    .skill-group {
+        margin-bottom: 24px;
+    }
+    
+    .skill-group-label {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    
+    .skill-tags {
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        padding: 4px 10px;
+        line-height: 1.65;
+    }
+    
+    /* ── LANGUAGE SECTION ── */
+    .lang-item {
+        margin-bottom: 17px;
+    }
+    
+    .lang-header {
+        margin-bottom: 7px;
+    }
+    
+    /* ── CERTIFICATIONS ── */
+    .cert-item {
+        padding: 12px 0;
+    }
+    
+    .cert-name {
+        line-height: 1.5;
+    }
+    
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline-item {
+        padding-bottom: 34px;
+    }
+    
+    .timeline-title {
+        line-height: 1.4;
+    }
+    
+    .timeline-org {
+        line-height: 1.6;
+    }
+    
+    .timeline-body {
+        margin-top: 12px;
+    }
+    
+    .timeline-body ul li {
+        font-size: 13.5px;
+        line-height: 1.8;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    
+    /* ── PROJECTS ── */
+    .projects-grid {
+        gap: 9px;
+    }
+    
+    .project-toggle {
+        padding: 13px 16px;
+        line-height: 1.55;
+    }
+    
+    .project-details {
+        padding: 5px 18px 15px 28px;
+    }
+    
+    .project-details ul li {
+        line-height: 1.8;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    
+    /* ── VOLUNTEERING ── */
+    .vol-item {
+        padding: 14px 0;
+    }
+    
+    .vol-role {
+        line-height: 1.5;
+    }
+    
+    /* ── REFERENCES ── */
+    .references-box {
+        padding: 14px 16px;
+    }
+    
+    .references-text-sub {
+        line-height: 1.6;
+    }
+    
+    /* ── RESPONSIVE REFINEMENTS ── */
+    @media (max-width: 900px) {
+        .main {
+            padding: 36px 28px;
+        }
+    
+        .sidebar {
+            padding: 32px 28px;
+        }
+    
+        .section {
+            margin-bottom: 38px;
+        }
+    }
+    
+    @media (max-width: 560px) {
+        .main {
+            padding: 28px 20px;
+        }
+    
+        .sidebar {
+            padding: 28px 20px;
+        }
+    
+        .section {
+            margin-bottom: 32px;
+        }
+    
+        .profile-text {
+            font-size: 14px;
+            line-height: 1.8;
+            padding: 16px 18px;
+            text-align: left;
+            hyphens: none;
+        }
+    
+        .timeline-body ul li,
+        .project-details ul li {
+            text-align: left;
+        }
+    
+        .section-title {
+            margin-bottom: 16px;
+        }
+    }
+    
+    /* ── PRINT ── */
+    @media print {
+        .profile-text {
+            text-align: justify;
+            line-height: 1.7;
+        }
+    
+        .section {
+            margin-bottom: 28px;
+        }
+    }
+
   </style>
 </head>
 
@@ -1251,7 +1460,7 @@
           <span class="en-only">Profile</span>
           <span class="de-only">Profil</span>
         </h2>
-        <p class="profile-text en-only">
+        <p class="profile-text en-only" lang="en">
           Technical project manager and product owner with 3+ years of experience leading cross-functional R&amp;D projects for magnetic sensor technology, 
           from concept through prototyping and design verification to customer-ready samples and support of series production. Plans and controls schedules, 
           budgets, resources and risks across simulation, hardware, firmware, testing and procurement teams, and reports to stakeholders. 
@@ -1259,7 +1468,7 @@
           M.Sc. in Nanosciences and Nanotechnology and B.Sc. in Electrical and Electronic Engineering, with hands-on cleanroom and microfabrication experience. 
           Combines Scrum and waterfall delivery with technical-commercial coordination.
         </p>
-        <p class="profile-text de-only">
+        <p class="profile-text de-only" lang="de">
           Technischer Projektmanager und Product Owner mit über 3 Jahren Erfahrung in der Leitung funktionsübergreifender F&amp;E-Projekte für magnetische Sensortechnologie, 
           vom Konzept über Prototyping und Designverifikation bis zu kundenreifen Mustern und der Unterstützung der Serienproduktion. Plant und steuert Termine, 
           Budgets, Ressourcen und Risiken über Simulations-, Hardware-, Firmware-, Test- und Einkaufsteams hinweg und berichtet an Stakeholder. 
